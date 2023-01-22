@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeBlock</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <pre id="codeblock">
+
+        </pre>
+    </div>
+</body>
+</html>
+<script src="keywords.js"></script>
+<script>
+    const codeblock = document.getElementById('codeblock');
+    const code = `function temporarySwap(array)
+{
+    var left = null;
+    var right = null;
+    var length = array.length;
+    for (left = 0, right = length - 1; left < right; left += 1, right -= 1)
+    {
+        var temporary = array[left];
+        array[left] = array[right];
+        array[right] = temporary;
+    }
+    return array;
+}
+
+function xorSwap(array)
+{
+    var i = null;
+    var r = null;
+    var length = array.length;
+    for (i = 0, r = length - 1; i < r; i += 1, r -= 1)
+    {
+        var left = array[i];
+        var right = array[r];
+        left ^= right;
+        right ^= left;
+        left ^= right;
+        array[i] = left;
+        array[r] = right;
+    }
+    return array;
+}`;
+
+let c = code;
+
+for(let i=0; i<keywords.length; i++){
+    const color = keywords[i].color;
+    const words = keywords[i].words;
+
+    for(let w of words){
+        c = c.replaceAll(w, `<span style='color: ${color}';'>${w}</span>`);
+    }
+}
+
+console.log(c);
+
+codeblock.innerHTML = c;
+
+</script>

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import "https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f3f3f3;
+    /* color: ; */
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#codeblock{
+    max-width: 800px;    
+    border: 1px solid grey;
+    padding: 20px;
+    color: rgb(246, 246, 246);
+    font-size: larger;
+    line-height: 1.5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(157, 157, 157);
+    font-family: 'Poppins' sans-serif;
+    background-color: rgb(47, 47, 47);
+    overflow-x: scroll;
+}
+
+  #codeblock::-webkit-scrollbar {
+    height: 10px;
+  }
+  
+  /* Track */
+  #codeblock::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  #codeblock::-webkit-scrollbar-thumb {
+    background: rgb(172, 172, 172); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  #codeblock::-webkit-scrollbar-thumb:hover {
+    background: grey; 
+  }
